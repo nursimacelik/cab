@@ -1,0 +1,29 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="articles">
+    <!--<h1 class="articles-heading">Yayınlar</h1>-->
+    <div class="search">
+        <form action="{% url 'search_results' %}" method="GET">
+            <input id="search-input" name="q" type="text" placeholder="Bir yazı arayın">
+        <button type="submit">
+            <i class="material-icons">search</i>
+        </button>
+    </form>
+    </div>
+    {% for article in articles %}
+      <div class="blog-article">
+          <a href="{% url 'post_detail' pk=article.id %}">
+              <img class="blog-article-image" src="{{article.image.url}}"></img>
+          </a>
+        <div class="blog-article-content">
+          <p class="blog-article-date">{{ article.published_date|date:"d F Y" }}</p>
+          <h1 class="blog-article-heading" ><a href="{% url 'post_detail' pk=article.id %}">{{ article.title }}</a></h1>
+          <p class="blog-article-short-text">{{ article.text }}</p>
+          <a class="continue-reading" href="{% url 'post_detail' pk=article.id %}" >Devamını Oku >></a>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

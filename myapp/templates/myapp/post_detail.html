@@ -1,0 +1,11 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+<div id="post-detail">
+    <h1>{{ post.title }}</h1>
+    <p id="post-detail-date">{{post.published_date|date:"d F Y"}}</p>
+    <img src="{{ post.image.url }}" alt="">
+    <p>{{ post.text }}</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="articles">
+    <!--<h1 class="articles-heading">Yayınlar</h1>-->
+    <div class="search">
+        <form action="{% url 'search_results' %}" method="GET">
+            <input id="search-input" name="q" type="text" placeholder="Search...">
+        <button type="submit">
+            <i class="material-icons">search</i>
+        </button>
+    </form>
+    </div>
+    {% for article in posts %}
+      <div class="blog-article">
+        <img class="blog-article-image" src="{% static 'img1.jpg' %}"></img>
+        <div class="blog-article-content">
+          <p class="blog-article-date">{{ article.published_date|date:"d F Y" }}</p>
+          <h1>{{ article.title }}</h1>
+          <p class="blog-article-short-text">{{ article.text }}</p>
+          <a href="{% url 'article_full' pk=article.id %}" >Devamını Oku >></a>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'myapp/base.html' %}
+
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="about">
+        <h1>Kurucu Avukat - Av. Nagihan Çelik</h1>
+        <div id="about-content">
+            <div id="about-text">
+                <p>
+                    Av. Nagihan Çelik 1994 yılında İzmir’de doğmuştur.  Aslen Malatyalı olan Çelik, Çimentaş Anadolu lisesini ikincilikle bitirmesinin ardından Gazi Üniversitesi Hukuk Fakültesinde hukuk öğrenimi görmüştür. Hukuk öğrenimini tamamladıktan sonra İzmir’e dönmüş, avukatlık stajını İzmir Barosu bünyesinde tamamlamıştır. Staj esnasında Türkiye Barolar Birliği Bölgelerarası Kurgusal Duruşma Yarışmasında İzmir Barosu’nu temsil eden takımda asil üye olarak yer almış, İzmir Barosu’na Ege bölgesi birinciliğini getirmiştir. Çelik, başarılı bir staj döneminin sonunda avukatlık ruhsatını alıp halihazırdaki Çelik Avukatlık Bürosu’nu kurmuştur. İzmir Ticaret Odası bünyesinde Dış Ticaret Uzmanlığı eğitimi almıştır. Aynı zamanda uzlaştırmacı olan Çelik, inşaat hukuku, ticaret hukuku, şirketler hukuku ve ceza hukuku başta olmak üzere hukukun her alanında müvekkillerine danışmanlık ve dava takibi hizmetleri vermektedir.
+                    
+                </p>
+                <p>
+                    Çelik Avukatlık Bürosu,
+                    <br>
+   Müvekkillerine karşı şeffaf, her an ulaşılabilir, güvenilir ve çözüm odaklı hizmet verme anlayışını misyon; tek tek hayatına dokunduğu her insan ile insanlık huzur ve adaletine ulaşmayı vizyon edinmiş bir bürodur.
+                </p>
+            </div>
+            <div>
+    
+            </div>
+            <div id="about-img">
+                <img src="{% static 'terazi.jpg' %}" alt="">
+            </div>
+        </div>
+        
+    </div>
+{% endblock content %}

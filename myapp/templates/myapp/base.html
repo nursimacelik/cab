@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+    <head>
+        <title>ÇAB</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+      <nav>
+        <div class="logo"><a href="{% url 'home_page' %}">ÇELİK</a></div>
+        <div class="slogan">Avukatlık Bürosu</div>
+        <div class="phone">
+          <div class="phone-text">
+            <i class="material-icons">call</i>
+            <p>Bizi Arayın</p>
+          </div>
+          <p>+90 505 065 3067</p>
+        </div>
+        <div class="menu-items">
+          <li>
+            <a href="{% url 'home_page' %}">Anasayfa</a>
+          </li>
+          <li>
+            <a href="{% url 'about' %}">Hakkımızda</a>
+          </li>
+          <li>
+            <a href="{% url 'blog' %}">Blog</a>
+          </li>
+          <li id="last-menu-item">
+            <a href="{% url 'contact' %}">İletişim</a>
+        </div>
+      </nav>
+      {% block content %}
+      {% endblock %}
+      <footer>
+        <!--
+        <div>
+          <h4>Adres</h4>
+          Adalet, 1586/7. Sk. No:10 D:203, 35540 Bayraklı/İzmir
+        </div>
+        <div>
+          <h4>Telefon</h4>
+          +90 505 065 3067
+        </div>
+        -->
+        <div>
+          <a href="https://www.linkedin.com/in/nagihan-%C3%A7elik-9b404b171/" class="fa fa-linkedin" target="_blank"></a>
+          <a href="#" class="fa fa-instagram" target="_blank"></a>
+        </div>
+      </footer>
+    </body>
+</html>

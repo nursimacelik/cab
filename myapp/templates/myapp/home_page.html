@@ -1,0 +1,74 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+
+    <div class="slidershow middle">
+
+      <div class="slides">
+        <input type="radio" name="r" id="r1" checked>
+        <input type="radio" name="r" id="r2">
+        <input type="radio" name="r" id="r3">
+        <input type="radio" name="r" id="r4">
+        <div class="slide s1">
+          <div id="text1">
+          </div>
+        </div>
+        <div class="slide s2">
+          <div id="text2">
+          </div>
+        </div>
+        <div class="slide s3">
+          <div id="text3">
+          </div>
+        </div>
+        <div class="slide s4">
+          <div id="text4">
+              <!--
+              <h1 class="heading">Başlık</h1>
+              <p class="header-paragraph">
+                "Yazı"
+              </p>
+            -->
+          </div>
+        </div>
+      </div>
+  
+      <div class="navigation">
+        <label for="r1" class="bar"></label>
+        <label for="r2" class="bar"></label>
+        <label for="r3" class="bar"></label>
+        <label for="r4" class="bar"></label>
+      </div>
+    </div>
+
+    <section class="articles">
+      <h1 class="articles-heading">Popüler Yayınlar</h1>
+      {% for article in articles %}
+        <div class="article">
+          <div class="article-content">
+            <p class="article-date">{{ article.published_date|date:"d F Y" }}</p>
+            <h1>{{ article.title }}</h1>
+            <p class="article-short-text">{{ article.text }}</p>
+            <a class="continue-reading" href="{% url 'post_detail' pk=article.id %}" >Devamını Oku >></a>
+          </div>
+        </div>
+      {% endfor %}
+      <h2><a href="{% url 'blog' %}">Hepsini Gör</a></h2>
+    </section>
+
+{% endblock %}
+<!--sources 
+  Photo by Tyler Casey on Unsplash
+  Photo by Kristijan Arsov on Unsplash
+  Photo by Scott Graham on Unsplash
+  Photo by Aron Yigin on Unsplash
+  Photo by Mert Kahveci on Unsplash
+  Photo by June O on Unsplash
+  Photo by Jez Timms on Unsplash
+  Photo by Giammarco Boscaro on Unsplash
+  Photo by Patrick Fore on Unsplash
+  Photo by Thomas Martinsen on Unsplash
+  Photo by Augustine Wong on Unsplash
+  Photo by Henry & Co. on Unsplash
+
+-->
